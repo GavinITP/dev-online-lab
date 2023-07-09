@@ -6,7 +6,6 @@ import { defaultCss, defaultHtml, defaultJs } from "./data/defaultStates";
 import { generateIframeSrcDoc } from "./logics/editorLogic";
 import CodeMirror from "@uiw/react-codemirror";
 import { githubDark } from "@uiw/codemirror-theme-github";
-import { javascript } from "@codemirror/lang-javascript";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
 
 const App = () => {
@@ -42,7 +41,7 @@ const App = () => {
             alt="HTML Icon"
             width="16px"
           />
-          <label>HTML</label>
+          <label className="text-sm">HTML</label>
         </span>
         <CodeMirror
           value={htmlCode}
@@ -52,14 +51,14 @@ const App = () => {
           theme={githubDark}
         />
 
-        <span className="flex items-center bg-black px-4 py-1">
+        <span className="flex items-center bg-black px-4 py-1 mt-2">
           <img
             className="inline-block mr-2"
             src={cssIcon}
             alt="CSS Icon"
             width="16px"
           />
-          <label>CSS</label>
+          <label className="text-sm">CSS</label>
         </span>
         <CodeMirror
           value={cssCode}
@@ -69,14 +68,14 @@ const App = () => {
           theme={githubDark}
         />
 
-        <span className="flex items-center bg-black px-4 py-1">
+        <span className="flex items-center bg-black px-4 py-1 mt-2">
           <img
             className="inline-block mr-2"
             src={jsIcon}
             alt="Javascript Icon"
             width="16px"
           />
-          <label>Javascript</label>
+          <label className="text-sm">Javascript</label>
         </span>
         <CodeMirror
           value={jsCode}
