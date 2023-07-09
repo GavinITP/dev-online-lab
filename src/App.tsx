@@ -43,10 +43,13 @@ const App = () => {
           />
           <label className="text-sm">HTML</label>
         </span>
+
         <CodeMirror
           value={htmlCode}
           height="200px"
+          // @ts-ignore
           onChange={handleHtmlChange}
+          // @ts-ignore
           extensions={[loadLanguage("html")]}
           theme={githubDark}
         />
@@ -63,7 +66,9 @@ const App = () => {
         <CodeMirror
           value={cssCode}
           height="200px"
+          // @ts-ignore
           onChange={handleCssChange}
+          // @ts-ignore
           extensions={[loadLanguage("css")]}
           theme={githubDark}
         />
@@ -80,7 +85,9 @@ const App = () => {
         <CodeMirror
           value={jsCode}
           height="200px"
+          // @ts-ignore
           onChange={handleJsChange}
+          // @ts-ignore
           extensions={[loadLanguage("javascript")]}
           theme={githubDark}
         />
