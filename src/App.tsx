@@ -3,6 +3,7 @@ import cssIcon from "./icons/css3-alt.svg";
 import jsIcon from "./icons/square-js.svg";
 import { useEffect, useState } from "react";
 import { defaultCss, defaultHtml, defaultJs } from "./data/defaultStates";
+import { generateIframeSrcDoc } from "./logics/editorLogic";
 
 const App = () => {
   const [htmlCode, setHtmlCode] = useState<string>(defaultHtml);
@@ -24,21 +25,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    const generateIframeSrcDoc = () => {
-      return `
-        <html>
-          <head>
-            <style>${cssCode}</style>
-          </head>
-          <body>
-            ${htmlCode}
-            <script>${jsCode}</script>
-          </body>
-        </html>
-      `;
-    };
-
-    setAllCode(() => generateIframeSrcDoc())
+    const allCode = generateIframeSrcDoc(htmlCode, cssCode, jsCode);
+    setAllCode(allCode);
 
   }, [htmlCode, cssCode, jsCode]);
 
