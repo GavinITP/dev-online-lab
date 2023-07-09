@@ -44,6 +44,7 @@ const App = () => {
           <label className="text-sm">HTML</label>
         </span>
 
+        {/* FIXME: fix onChange */}
         <CodeMirror
           value={htmlCode}
           height="200px"
@@ -63,6 +64,8 @@ const App = () => {
           />
           <label className="text-sm">CSS</label>
         </span>
+
+        {/* FIXME: fix onChange */}
         <CodeMirror
           value={cssCode}
           height="200px"
@@ -82,6 +85,8 @@ const App = () => {
           />
           <label className="text-sm">Javascript</label>
         </span>
+
+        {/* FIXME: fix onChange */}
         <CodeMirror
           value={jsCode}
           height="200px"
