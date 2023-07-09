@@ -2,65 +2,7 @@ import htmlIcon from "./icons/html5.svg";
 import cssIcon from "./icons/css3-alt.svg";
 import jsIcon from "./icons/square-js.svg";
 import { useEffect, useState } from "react";
-
-const defaultHtml =
-`<h1>Welcome to my Dev Online Lab!!!</h1>
-<p>Feel free to write your own HTML, CSS, Javascript here ~</p>
-
-<div class="counter">
-  <span id="count">0</span>
-</div>
-
-<button class="btn" onclick="incrementCounter()">Increment</button>
-
-<div class="github-link">
-  <a href="">Visit my GitHub account</a>
-</div>
-`
-
-const defaultCss =
-`body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  text-align: center;
-  padding: 50px;
-}
-
-h1 {
-  color: #333333;
-}
-
-.counter {
-  margin-top: 30px;
-  font-size: 24px;
-}
-
-.btn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #45a049;
-}
-
-.github-link {
-  margin-top: 50px;
-}`
-
-const defaultJs =
-`let countElement = document.getElementById("count");
-let count = 0;
-
-const incrementCounter = () => {
-  count++;
-  countElement.textContent = count;
-}`
+import { defaultCss, defaultHtml, defaultJs } from "./data/defaultStates";
 
 const App = () => {
   const [htmlCode, setHtmlCode] = useState<string>(defaultHtml);
