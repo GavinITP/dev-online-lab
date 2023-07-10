@@ -1,12 +1,19 @@
-import htmlIcon from "./icons/html5.svg";
-import cssIcon from "./icons/css3-alt.svg";
-import jsIcon from "./icons/square-js.svg";
+// react
 import { useEffect, useState } from "react";
+
+// custom data and logic files
 import { defaultCss, defaultHtml, defaultJs } from "./data/defaultStates";
 import { generateIframeSrcDoc } from "./logics/editorLogic";
+
+// CodeMirror
 import CodeMirror from "@uiw/react-codemirror";
 import { githubDark } from "@uiw/codemirror-theme-github";
 import { loadLanguage } from "@uiw/codemirror-extensions-langs";
+
+// icons
+import htmlIcon from "./icons/html5.svg";
+import cssIcon from "./icons/css3-alt.svg";
+import jsIcon from "./icons/square-js.svg";
 
 const App = () => {
   const [htmlCode, setHtmlCode] = useState<string>(defaultHtml);
