@@ -1,5 +1,4 @@
-export const defaultHtml =
-`<h1>Welcome to my Dev Online Lab!!!</h1>
+export const defaultHtml = `<h1>Welcome to my Dev Online Lab!!!</h1>
 <p>Feel free to write your own HTML, CSS, Javascript here ~</p>
 
 <div class="counter">
@@ -10,12 +9,10 @@ export const defaultHtml =
 
 <a class="my-link" href="https://shorturl.asia/sVRDa" target="_blank">Visit my page</a>
 
-`
+`;
 
-export const defaultCss =
-`body {
+export const defaultCss = `body {
   font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
   text-align: center;
   padding: 50px;
 }
@@ -46,13 +43,12 @@ h1 {
 .my-link {
   margin-top: 50px;
   display: block;
-}`
+}`;
 
-export const defaultJs =
-`let countElement = document.getElementById("count");
+export const defaultJs = `let countElement = document.getElementById("count");
 let count = 0;
 
 const incrementCounter = () => {
   count++;
   countElement.textContent = count;
-}`
+}`;

@@ -1,5 +1,5 @@
 // react
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
 // custom data and logic files
 import { defaultCss, defaultHtml, defaultJs } from "./data/defaultStates";
@@ -21,16 +21,16 @@ const App = () => {
   const [jsCode, setJsCode] = useState<string>(defaultJs);
   const [allCode, setAllCode] = useState<string>("");
 
-  const handleHtmlChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setHtmlCode(e.target.value);
+  const handleHtmlChange = (e: SetStateAction<string>) => {
+    setHtmlCode(e);
   };
 
-  const handleCssChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setCssCode(e.target.value);
+  const handleCssChange = (e: SetStateAction<string>) => {
+    setCssCode(e);
   };
 
-  const handleJsChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setJsCode(e.target.value);
+  const handleJsChange = (e: SetStateAction<string>) => {
+    setJsCode(e);
   };
 
   useEffect(() => {
@@ -51,18 +51,16 @@ const App = () => {
           <label className="text-sm">HTML</label>
         </span>
 
-        {/* FIXME: fix onChange */}
         <CodeMirror
           value={htmlCode}
           height="200px"
-          // @ts-ignore
           onChange={handleHtmlChange}
           // @ts-ignore
           extensions={[loadLanguage("html")]}
           theme={githubDark}
         />
 
-        <span className="flex items-center bg-black px-4 py-1 mt-2">
+        <span className="flex items-center bg-black px-4 py-1 mt-8">
           <img
             className="inline-block mr-2"
             src={cssIcon}
@@ -72,18 +70,16 @@ const App = () => {
           <label className="text-sm">CSS</label>
         </span>
 
-        {/* FIXME: fix onChange */}
         <CodeMirror
           value={cssCode}
           height="200px"
-          // @ts-ignore
           onChange={handleCssChange}
           // @ts-ignore
           extensions={[loadLanguage("css")]}
           theme={githubDark}
         />
 
-        <span className="flex items-center bg-black px-4 py-1 mt-2">
+        <span className="flex items-center bg-black px-4 py-1 mt-8">
           <img
             className="inline-block mr-2"
             src={jsIcon}
@@ -93,11 +89,9 @@ const App = () => {
           <label className="text-sm">Javascript</label>
         </span>
 
-        {/* FIXME: fix onChange */}
         <CodeMirror
           value={jsCode}
           height="200px"
-          // @ts-ignore
           onChange={handleJsChange}
           // @ts-ignore
           extensions={[loadLanguage("javascript")]}
